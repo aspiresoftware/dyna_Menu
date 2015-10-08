@@ -1,0 +1,44 @@
+<script type="text/ng-template" id="categorytpl">
+  <a tabindex="-1" ng-href="#">
+    {{category.name}} 
+    <span class="arrow" ng-if="category.subcategories"></span>
+  </a>
+  <ul class="dropdown-menu no-border" ng-if="category.subcategories">
+    <li class="dropdown-submenu" ng-repeat="category in category.subcategories" ng-include="'categorytpl'"></li>
+  </ul>
+</script>
+<!--All classes from Unify start-->
+<div class="col-md-12 left-container-img-wrapper no-padding by_left_panel_fixed m-top-4">
+    <div class="scrollableLeftPanelDiv by-filter-links show-overflow">
+<ul class="dropdown-menu sidebar-nav-v1 sidebar-nav-v3 ul-dropdown sidebar-nav-v2 hidden-sm hidden-xs full-width" id="parentMenu"
+    role="menu" aria-labelledby="dropdownMenu">
+    <!-- Child Menu -->
+    <li class="dropdown-submenu list-group-item ml-list-group false list-div-inline register-page ng-scope" ng-repeat="category in categories" ng-include="'categorytpl'">   
+    </li>
+</ul>
+<script type="text/ng-template" id="categorymobiletpl">
+  <a ng-href="#" ng-click="reloadRoute()" ng-class="{'last-child':!category.subcategories}" style="width:100%;display:inline-block;">
+    <span ng-repeat="i in getNumber(category.depth) track by $index"></span>
+    
+    <span>
+      {{category.name}}
+    </span>
+
+    <div class="inline-b pull-right">
+    <i class="pull-right" ng-if="category.subcategories" >
+  </i><div class="clearfix"></div>
+  </div>
+  </a>
+
+  <ul class="nav sublist-green" ng-if="category.subcategories">
+    <li class="list-group-item-m" ng-repeat="category in category.subcategories" ng-include="'categorymobiletpl'">
+    </li>
+  </ul>
+</script>
+
+<nav class="navbar navbar-default bg-white hidden-lg hidden-md" role="navigation" ng-if="categories">
+      <ul class="nav no-padding-left left-gap full-width">
+         <li class="dropdown " ng-repeat="category in categories" ng-include="'categorymobiletpl'">
+         </li>
+      </ul>
+</nav>

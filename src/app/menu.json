@@ -1,0 +1,55 @@
+{
+    "category":
+    [
+        {
+            "id": 10100,
+            "name": "ROOT-1"
+        },
+        {
+            "id": 10101,
+            "name": "ROOT-2",
+            "subcategories":
+            [
+                {
+                    "id": 10108,
+                    "name": "LEVEL-1-1"
+                },
+                {
+                    "id": 10109,
+                    "name": "LEVEL-1-2",
+                    "subcategories":
+                    [
+                         {
+                             "id": 10308,
+                             "name": "LEVEL-2"
+                         }
+                    ]
+                },
+                {
+                    "id": 10107,
+                    "name": "LEVEL-1-3"
+                },
+                {
+                    "id": 10102,
+                    "name": "LEVEL-1-4"
+                },
+                {
+                    "id": 10103,
+                    "name": "LEVEL-1-5"
+                }
+            ]
+        },
+        {
+            "id": 10106,
+            "name": "ROOT-3"
+        },
+        {
+            "id": 10150,
+            "name": "ROOT-4"
+        },
+        {
+            "id": 10250,
+            "name": "ROOT-5"
+        }
+    ]
+}
